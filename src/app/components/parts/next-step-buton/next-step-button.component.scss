@@ -1,0 +1,6 @@
+@import 'src/variables.scss';
+
+
+:host {
+  @include cta-button;
+}
