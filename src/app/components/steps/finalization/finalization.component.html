@@ -1,0 +1,11 @@
+<div class="container">
+  @if (success) {
+    <div class="success-container">
+      <h1 class="title"> Ďakujeme za úhradu, {{ clientName }}.</h1>
+      <span class="description"> Váš termín na konzultáciu máte úspešne rezervovaný. </span>
+    </div>
+  } @else {
+    <span class="error"> Vaša rezervácia termínu na konzultáciu nebola dokončená. </span>
+  }
+  <button mat-flat-button (click)="redirect()" class="cta-button"> Späť na stránku Nemocnice Bory</button>
+</div>
