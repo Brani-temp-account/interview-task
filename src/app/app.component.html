@@ -1,0 +1,18 @@
+<app-header [hideContent]="currentStep() === Steps.Finalization"></app-header>
+
+<!--In case of need for different routes at each step, I'd prefer using a -->
+<!--router with canActivate and canDeactivate guards-->
+@switch (currentStep()) {
+  @case (Steps.Timeslot) {
+    <app-timeslot />
+  }
+  @case (Steps.PersonalData) {
+    <app-personal-data />
+  }
+  @case (Steps.Summary) {
+    <app-summary />
+  }
+  @case (Steps.Finalization) {
+    <app-finalization />
+  }
+}
