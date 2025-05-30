@@ -1,0 +1,63 @@
+@import 'src/variables.scss';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 3.2rem;
+  max-width: 80rem;
+  width: 100%;
+}
+
+.summary {
+  display: flex;
+  flex-direction: row;
+  gap: 3.2rem;
+  align-items: flex-start;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 4rem;
+    flex: 1;
+    padding: 2.4rem;
+    background-color: $vkz-skeleton-white;
+    border-radius: 0.8rem;
+
+    .section {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+
+      .row {
+        display: flex;
+        flex-direction: row;
+        gap: 3.2rem;
+        flex: 1;
+
+        & > {
+          flex: 1;
+        }
+      }
+
+      .selected-timeslot {
+        font-size: 1.6rem;
+        line-height: 150%;
+        color: $vkz-skeleton-secondary;
+      }
+    }
+  }
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}

@@ -1,0 +1,22 @@
+@import 'src/variables.scss';
+
+:host {
+  width: 100%;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  flex: 1;
+
+  .label {
+    font-size: 1.2rem;
+    color: $vkz-skeleton-slate-24;
+  }
+
+  .value {
+    font-size: 1.6rem;
+    color: $vkz-skeleton-primary;
+  }
+}

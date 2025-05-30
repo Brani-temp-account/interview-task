@@ -1,0 +1,9 @@
+<div class="field">
+  <div class="label"> {{ label() }}</div>
+  @if (value()) {
+    <div class="value">{{ value() }}</div>
+  }
+  @for (value of values(); track value) {
+    <div class="value">{{ value }}</div>
+  }
+</div>

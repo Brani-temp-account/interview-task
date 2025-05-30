@@ -1,0 +1,52 @@
+<form [formGroup]="form">
+  <app-step-wrapper>
+    <div class="wrapper">
+      <h2> Zhrnutie rezervacie </h2>
+
+      <!-- These all could be separated into presentation components like app-icon-titlr -->
+      <div class="summary">
+        <div class="box">
+          <div class="section">
+            <app-icon-title> Osobne udaje</app-icon-title>
+            <div class="row">
+              <app-summary-field label="Meno" [value]="personalData.firstName" />
+              <app-summary-field label="Priezvisko" [value]="personalData.lastName" />
+            </div>
+            <app-summary-field label="Rodne cislo" [value]="personalData.birthNumber" />
+            <app-summary-field label="Adresa" [values]="cityAndCountry" class="capitalize" />
+          </div>
+
+          <div class="section">
+            <app-icon-title> Kontaktne udaje</app-icon-title>
+            <app-summary-field label="E-mailová adresa" [value]="personalData.email" />
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="section">
+            <app-icon-title> Vybrany termin</app-icon-title>
+            <div class="selected-timeslot">
+              {{ selectedTime }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="questions">
+        <mat-checkbox formControlName="vop">
+          Oboznámil/a som sa s informáciami o spracúvaní osobných údajov.
+        </mat-checkbox>
+        <mat-checkbox formControlName="gdpr">
+          Súhlasím so <a href="https://nemocnica-bory.sk/vop/" target="_blank">všeobecnými obchodnými podmienkami</a>
+          spoločnosti Nemocnica Bory, a.s.
+        </mat-checkbox>
+        <mat-checkbox formControlName="marketing">
+          Súhlasím so <a href="https://nemocnica-bory.sk/marketing-suhlas/"
+                         target="_blank">spracovaním údajov pre marketingové účely.</a>
+        </mat-checkbox>
+      </div>
+    </div>
+  </app-step-wrapper>
+
+  <app-next-step-button [disabled]="form.invalid" (clicked)="onNextStepButtonClick()" />
+</form>
