@@ -1,0 +1,20 @@
+@import 'src/variables.scss';
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+.form-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 3.2rem;
+
+  :has(> :last-child:nth-child(2)) {
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,45 @@
+<form [formGroup]="form">
+  <app-step-wrapper>
+    <div class="form-section">
+      <h2> Osobne udaje </h2>
+      <div class="form-row">
+        <mat-form-field>
+          <input matInput placeholder="Meno" formControlName="firstName" />
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Priezvisko" formControlName="lastName" />
+        </mat-form-field>
+      </div>
+      <div class="form-row">
+        <mat-form-field>
+          <input matInput placeholder="Rodne cislo" formControlName="birthNumber" />
+        </mat-form-field>
+      </div>
+      <div class="form-row">
+        <mat-form-field>
+          <mat-select placeholder="Stat" formControlName="countryId">
+            @for (country of countries; track country.id) {
+              <mat-option [value]="country.id">{{ country.name }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="capitalize">
+          <mat-select placeholder="Mesto/Obec" formControlName="cityId">
+            @for (city of cities; track city) {
+              <mat-option [value]="city" class="capitalize">{{ city }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <h2> Kontaktne udaje </h2>
+      <div class="form-row">
+        <mat-form-field>
+          <input matInput placeholder="Email" formControlName="email" />
+        </mat-form-field>
+      </div>
+    </div>
+  </app-step-wrapper>
+
+  <app-next-step-button [disabled]="form.invalid" (clicked)="onNextStepButtonClick()" />
+</form>
