@@ -1,0 +1,33 @@
+$vkz-skeleton-white: #FFFFFF;
+$vkz-skeleton-slate-8: #E8E9EA;
+$vkz-skeleton-slate-24: #B2B4B7;
+
+$vkz-skeleton-primary: #033F75;
+$vkz-skeleton-secondary: #0BA13B;
+$vkz-skeleton-secondary-light: #DAF1E1;
+$vkz-skeleton-error: #DB0000;
+
+
+$default-background-color: #F7F7F7;
+
+@mixin cta-button {
+  --mat-sys-primary: #{$vkz-skeleton-secondary};
+
+  background-color: $default-background-color;
+
+  border-top: 1px solid $vkz-skeleton-slate-8;
+  padding: 1.6rem 3.2rem;
+  display: flex;
+  justify-content: end;
+
+  button {
+    font-size: 1.4rem;
+    line-height: 150%;
+  }
+}
+
+@mixin secondary-button {
+  background-color: $vkz-skeleton-white !important;
+  border: 1px solid $vkz-skeleton-primary !important;
+  color: $vkz-skeleton-primary !important;
+}
