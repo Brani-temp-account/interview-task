@@ -1,0 +1,30 @@
+<app-step-wrapper>
+  <div class="timeslot-content">
+    <div class="description">
+      <h1> Doprajte si druhý názor od XX v Nemocnici Bory </h1>
+      <p>
+        Vyberte si termín na XX-minútovú konzultáciu za poplatok a náš odborník zhodnotí váš zdravotný stav a odporučí
+        spôsob liečby.
+      </p>
+    </div>
+    @if (dateClassFn) {
+      <div class="inputs">
+        <mat-calendar (selectedChange)="onDateChange($event)" [startView]="'month'" [minDate]="today"
+                      [dateClass]="dateClassFn"></mat-calendar>
+        <div class="slot-selection">
+          Dostupne casy
+          <div class="available-slots">
+            @for (slot of selectedDateAvailableSlots(); track slot.id) {
+              <button mat-flat-button (click)="onSlotClick(slot.id)" class="secondary-button"
+                      [class.selected]="slot.id === selectedSlotId()"> {{ slot.time }}
+              </button>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</app-step-wrapper>
+
+<app-next-step-button [disabled]="!selectedSlotId()" (clicked)="onNextStepButtonClick()" />
+
