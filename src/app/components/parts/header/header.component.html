@@ -1,0 +1,14 @@
+<div class="header">
+  <img src="assets/logo.png" alt="Penta logo" class="logo" />
+  @if (!hideContent()) {
+    <div class="stepper">
+      <div class="stepper-icon">
+        <div class="stepper-icon-middle"></div>
+      </div>
+      {{ currentStepText() }}
+    </div>
+    <button mat-icon-button (click)="refresh()" class="cancel-button" aria-label="Reset Button">
+      <mat-icon>cancel</mat-icon>
+    </button>
+  }
+</div>

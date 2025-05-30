@@ -1,0 +1,33 @@
+@import 'src/variables.scss';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+
+  color: $vkz-skeleton-primary;
+  padding: 6rem 5.6rem;
+  text-align: center;
+
+  --mat-dialog-actions-padding: 0;
+  --mdc-dialog-supporting-text-color: #{$vkz-skeleton-primary};
+
+  h2 {
+    font-size: 3.2rem;
+    line-height: 125%;
+    width: 30rem;
+    margin: 0;
+  }
+
+  .message {
+    font-size: 1.6rem;
+    line-height: 150%;
+  }
+
+  .dialog-actions {
+    display: flex;
+    gap: 1.6rem;
+  }
+}
