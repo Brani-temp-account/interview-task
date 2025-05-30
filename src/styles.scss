@@ -1,4 +1,86 @@
+@import "variables";
+@import '@angular/material/prebuilt-themes/azure-blue.css';
+
 html {
   // sets 1rem to 10px for easier styling
   font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-size: 1.6rem;
+  background-color: $default-background-color;
+
+  // This is done so we can use h1 where there's just one title
+  &:has(h1) h1 {
+    font-size: 2.4rem;
+    line-height: 125%;
+    color: $vkz-skeleton-primary;
+    text-align: center;
+    margin: 0;
+  }
+
+  &:not(:has(h1)) h2 {
+    font-size: 2.4rem;
+    line-height: 125%;
+    color: $vkz-skeleton-primary;
+    text-align: center;
+    margin: 0;
+  }
+
+  // setting used material variables to match the design
+  --mat-datepicker-calendar-header-text-size: 1.3rem;
+  --mat-datepicker-calendar-body-text-size: 1.3rem;
+  --mat-datepicker-calendar-period-button-text-size: 1.3rem;
+  --mat-datepicker-calendar-weekday-text-size: 1.2rem;
+  --mat-datepicker-calendar-day-text-size: 1.3rem;
+
+  --mat-sys-title-small-size: 1.3rem;
+  --mat-sys-body-small-size: 1.3rem;
+  --mat-sys-body-medium-size: 1.3rem;
+  --mat-sys-label-large-size: 1.3rem;
+
+  --mat-sys-hover-state-layer-opacity: 0;
+  --mat-sys-pressed-state-layer-opacity: 0;
+  --mat-sys-focus-state-layer-opacity: 0;
+
+  --mat-dialog-with-actions-content-padding: 0;
+}
+
+form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+app-next-step-button {
+  position: sticky;
+  bottom: 0;
+}
+
+.slot-available-hint,
+.slot-available > .mat-calendar-body-cell-content::after {
+  content: "";
+  background-color: $vkz-skeleton-secondary;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+
+  position: absolute;
+  bottom: -0.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.cta-button {
+  @include cta-button;
+}
+
+.secondary-button {
+  @include secondary-button;
 }
